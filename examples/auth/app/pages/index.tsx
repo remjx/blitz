@@ -26,6 +26,7 @@ const UserStuff = () => {
   const session = useSession()
   const query = useRouterQuery()
   const [trackViewMutation] = useMutation(trackView)
+  const [data] = useQuery(getUser, { where: { id: session.userId || undefined }})
 
   return (
     <div>
